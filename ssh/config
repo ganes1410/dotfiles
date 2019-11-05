@@ -1,0 +1,35 @@
+Host bitbucket.org
+ Hostname bitbucket.org
+ User git
+ IdentityFile ~/.ssh/bitbucket_work_rsa
+
+Host gitlab.com
+ Hostname gitlab.com
+ User git
+ IdentityFile ~/.ssh/gitlab_work_rsa
+ 
+ Host personalgitlab
+  Hostname gitlab.com
+  User git
+  IdentityFile ~/.ssh/gitlab_personal_rsa
+
+Host github.com
+ Hostname github.com
+ User git
+ IdentityFile ~/.ssh/github_personal_rsa
+
+Host workgithub
+ Hostname github.com
+ User git
+ IdentityFile ~/.ssh/github_work_rsa
+
+
+
+
+
+# TCPKeepAlive - Specifies whether the system should send TCP keepalive messages to the other side. If they are sent, death of the connection or crash of one of the machines will be properly noticed. However, this means that connections will die if the route is down temporarily, and some people find it annoying (The default is ‘yes’).
+# ServerAliveInterval - Sets a timeout interval in seconds after which if no data has been received from the server, ssh(1) will send a message through the encrypted channel to request a response from the server. The default is 0, indicating that these messages will not be sent to the server.
+Host *
+ UseKeychain yes
+ TCPKeepAlive yes
+ ServerAliveInterval 120
